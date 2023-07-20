@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		.slide-container{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		.swiper-container{
+			text-align: center;
+			width: 100%;
+		}
+		.swiper{
+			width: 500px;
+			height: 300px;
+			text-align: left;
+		}
+		.swiper-2{
+			width: 500px;
+			height: 300px;
+			margin: 0 auto;
+		}
+		
+		#basic_form{
+			width: 600px;    
+			padding: 50px;
+			box-sizing: border-box;
+			margin: 0 auto;
+			background-color: rgb(225, 225, 225);
+			border-radius: 10px;
+		}
+		#basic_form > div{
+			padding: 10px;
+		}
+		#basic_form label{
+			display: flex;
+			font-weight: bold;
+		}
+		#basic_form label span{
+			display: inline-block;
+			width: 150px;
+		}
+		#basic_form label div{
+			flex: 1;
+		}
+		#basic_form input{
+			padding: 10px;
+			border-radius: 5px;
+			width: 100%;
+		}
+		#basic_form button{
+			display: block;
+			border: 0;
+			color: #FFF;
+			padding: 10px;
+			width: 200px;
+			margin: 20px auto 0 auto;
+			background-color: #0144ff;
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<h2><a href="https://swiperjs.com/">Swiper</a></h2>
+	<div class="slide-container">
+		<div class="swiper-container">
+			<!-- Slider 1 -->
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">Slide 1</div>
+					<div class="swiper-slide">Slide 2</div>
+					<div class="swiper-slide">Slide 3</div>
+					<div class="swiper-slide">Slide 4</div>
+					
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+			<div id="swiper-title-1" class="swiper-title"></div>	
+		</div>
+		<!-- Slider 2 -->
+		<div class="swiper-container">
+			<div class="swiper-2">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="./image/ハムスター.jpg" width="500px" height="300px"></div>
+					<div class="swiper-slide"><img src="./image/片目.png" width="500px" height="300px"></div>
+					<div class="swiper-slide"><img src="./image/紙コップ.png" width="500px" height="300px"></div>
+					<div class="swiper-slide"><img src="./image/15796.jpg" width="500px" height="300px"></div>
+					
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+			<div id="swiper-title-2" class="swiper-title-2"></div>
+		</div>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<h2><a href="https://just-validate.dev/" target="_blank">JustValidate</a></h2>
+	<form id="basic_form" novalidate>
+		<div>
+			<label>
+				<span>名前</span>
+				<div>
+					<input id="basic_name" type="text" name="name" placeholder="名前を入力してください。" />
+				</div>
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>メールアドレス</span>
+				<div>
+					<input id="basic_email" type="text" name="email" placeholder="メールアドレスを入力してください。" />
+				</div>
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>パスワード</span>
+				<div>
+					<input id="basic_password" type="text" name="password" placeholder="パスワードを入力してください。" />
+				</div>
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>年齢</span>
+				<div>
+					<input id="basic_age" type="text" name="age" placeholder="年齢を入力してください。" />
+				</div>
+			</label>
+		</div>
+		<div>
+			<label>
+				<span>住所</span>
+				<div>
+					<input id="basic_address" type="text" name="address" placeholder="住所を入力してください。" />
+				</div>
+			</label>
+		</div>
+		<button type="submit">送信</button>
+	</form>
+	<a href="app.html">aaa</a>
+	<br>
+	<hr>
+	<br>
+	<script src="main.js"></script>
+</body>
+</html>
