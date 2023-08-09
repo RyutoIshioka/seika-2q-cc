@@ -3,7 +3,7 @@ import dayjs, { locale, extend } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
-import Chart from 'chart.js/auto';
+// import Chart from 'chart.js/auto';
 
 locale('ja');
 extend(duration);
@@ -29,24 +29,3 @@ extend(relativeTime);
 		  },1000);
 	    });
 })();
-
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: [ '時', '分', '秒'],
-    datasets: [{
-	label: '時計',
-	data: [12, 19, 3],
-	borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-	y: {
-	  beginAtZero: true
-	}
-    }
-  }
-});

@@ -3,19 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	<style>
-	
+	.contents
+	{
+		background-color: aqua;
+	}
+	textarea {
+	width: 500px;  /* 横幅 */
+	height: 200px; /* 高さ */
+	}
+	.logarea{
+	border: 1px solid #000000;
+	width: 1200px;
+	}
 	</style>
-	<title>Document</title>
+	<title>Work-daily</title>
 </head>
 <body>
 	<h1><div id ="date"></div></h1>
 	<h1><div id ="clock"></div></h1>
 	<div id="nextTime"></div>
 
-	<div>
-		<canvas id="myChart"></canvas>
-	</div>
+	<div class="contents">
+	
+			<h3>件名</h3>
+			<input type="text" id="input_title" placeholder="件名を入力してください。" onblur="task_title(event)" name="title" minlength="5" maxlength="12" style="width: 500px;height: 30px;">
+			
+			<div class="content">
+				<h3>内容</h3>
+				<div class="content_div">
+					<textarea class="contentMessage" id="content_message" name="massage" placeholder="内容を入力してください。" onblur="content(event)" minlength="10" maxlength="120"></textarea>
+				</div>
+			</div>
+			<input type="submit" onclick="send()">
 
+		<h3>ログ</h3>
+		<div class="logarea">
+			<div id ="log"></div>
+			<div id ="out-title"></div>
+			<div id ="out-content"></div>
+		</div>
+		<div class="time">
+			<div id="rateTime"></div>
+		</div>
+	</div>
 	<script src="app.js"></script>
+	<script>
+		var now = new Date();
+		function send(){
+			let content = document.getElementById('content_message');
+			let title = document.getElementById('input_title')
+			let rateTime = document.getElementById('rateTime')
+
+			let out_content = document.getElementById('out-content');
+			let out_title = document.getElementById('out-title');
+
+			let text = document.createTextNode(content.value + ':');
+			let text01 = document.createTextNode(title.value + ':');
+
+			var Year = now.getFullYear();
+			var Month = now.getMonth()+1;
+			var Date = now.getDate();
+			var Hour = now.getHours();
+			var Min = now.getMinutes();
+			var Sec = now.getSeconds();
+
+			time = Year + '年' + Month + '月' + Date + '日' + Hour + '時'+ Min + '分'+ Sec;
+
+			let text02= document.createTextNode(time);
+
+
+			let log = document.createElement("div");
+
+
+			out_title.appendChild(log);
+			log.appendChild(text01);
+
+			out_content.appendChild(log);
+			log.appendChild(text);
+
+			rateTime.appendChild(log);
+			log.appendChild(text02);
+		}
+	</script>
 </body>
 </html>
